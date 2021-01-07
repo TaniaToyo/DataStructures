@@ -69,6 +69,18 @@ def list_deletepos(head):
         temp=temp.next
     temp.next=temp.next.next
 
+def reverseList(head):
+        prevPointer=None
+        currentPointer=head
+        nextPointer=head
+        while currentPointer.next!=None:
+            nextPointer=nextPointer.next
+            currentPointer.next=prevPointer
+            prevPointer=currentPointer
+            currentPointer=nextPointer
+        currentPointer.next=prevPointer
+        head=currentPointer
+        return head
 header=list_insert(head)
 list_display(header)
 #header=list_insertBegining(header)
@@ -80,5 +92,8 @@ list_display(header)
 #list_display(header)
 #list_deleteEnd(header)
 #list_display(header)
-list_deletepos(header)
+#list_deletepos(header)
+#list_display(header)
+header=reverseList(header)
+print('Display')
 list_display(header)
